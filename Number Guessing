@@ -1,0 +1,21 @@
+import random  # import module for generate random numbers
+number = random.randint(1, 12)  # can generate numbers from 1 to 12
+  
+player_name = input("Hello, what is your name? ")  # ask player's name
+number_of_guesses = 0 # how much numbers of guesses you can use 
+print('Nice to meet you! {} \nI\'m a program which guess the number from 1 to 12 \nThink of a number and I\'ll guess \nRemember that you have 4 chances:'.format(player_name)) # text for familiarization
+  
+while number_of_guesses < 4:  # begining of the loop. While number of guesses is lower than 4
+    guess = int(input())  # providing a string to enter a number
+    number_of_guesses += 1  # follows the number of attempts
+    if guess < number:  # loop "if" guess is less than number
+        print('Try higher number!')  # print it if guess is less than random
+    if guess > number:  # loop "if" guess is greater than number
+        print('Try lower number! ')  # print it if guess is greater than random
+    if guess == number:  # if guess equals number
+        break  # finishing a loop
+if guess == number:  # if guess equals number
+    print( '{}, you won on the {}th try/ies!'.format(player_name, number_of_guesses))  # if guess equals number you will win
+else:  # in other hand
+    print('The number was {} . Don\'t worry because you can try again .'.format(number)) # in other hand it will print if you lose
+
